@@ -1,0 +1,6 @@
+{
+  "name": "xrp-cli",
+  "version": "0.0.1",
+  "license": "ISC",
+  "description": "A Node-based CLI for the XRP Ledger"
+}
