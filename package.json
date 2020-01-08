@@ -10,12 +10,13 @@
   "scripts": {
     "build": "yarn clean && tsc --build",
     "clean": "rm -rf dist",
-    "lint": "tsc --noEmit && eslint 'src/**/*.ts' --fix"
+    "lint": "eslint 'src/**/*.ts' --fix"
   },
   "dependencies": {
     "commander": "^4.1.0"
   },
   "devDependencies": {
+    "@arkweid/lefthook": "^0.7.0",
     "@types/node": "^13.1.4",
     "@typescript-eslint/eslint-plugin": "^2.15.0",
     "@typescript-eslint/parser": "^2.15.0",

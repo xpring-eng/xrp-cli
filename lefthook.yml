@@ -1,0 +1,24 @@
+# A git hook runner
+# Refer to the guide for explanation:
+# https://github.com/Arkweid/lefthook/blob/master/docs/full_guide.md
+#
+
+commit-msg:
+  scripts:
+    'template_checker':
+      runner: bash
+
+pre-push:
+  parallel: true
+  commands:
+    packages-audit:
+      run: yarn audit
+
+pre-commit:
+  parallel: true
+  commands:
+    typescript:
+      run: tsc --noEmit
+    eslint:
+      glob: '*.ts'
+      run: yarn eslint {staged_files} --fix
