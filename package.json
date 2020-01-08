@@ -2,5 +2,20 @@
   "name": "xrp-cli",
   "version": "0.0.1",
   "license": "ISC",
-  "description": "A Node-based CLI for the XRP Ledger"
+  "description": "A Node-based CLI for the XRP Ledger",
+  "main": "./dist/index.js",
+  "bin": {
+    "xrp": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "yarn clean && tsc --build",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "commander": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.1.4",
+    "typescript": "^3.7.4"
+  }
 }

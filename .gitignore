@@ -1,0 +1,7 @@
+# .gitignore
+
+# Ignore dependencies
+node_modules
+
+# Ignore dist folder, built from tsc
+dist/
