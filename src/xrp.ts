@@ -2,7 +2,8 @@
 import * as commander from 'commander';
 
 const xrp_cli = new commander.Command();
-
 xrp_cli.version('0.0.1');
 
-console.log('Welcome to the XRP CLI!');
+xrp_cli.command('generate', 'generate a new address');
+
+xrp_cli.parse(process.argv);

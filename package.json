@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "license": "ISC",
   "description": "A Node-based CLI for the XRP Ledger",
-  "main": "./dist/index.js",
+  "main": "./dist/xrp.js",
   "bin": {
-    "xrp": "./dist/index.js"
+    "xrp": "./dist/xrp.js"
   },
   "scripts": {
     "build": "yarn clean && tsc --build",
@@ -13,7 +13,10 @@
     "lint": "eslint 'src/**/*.ts' --fix"
   },
   "dependencies": {
-    "commander": "^4.1.0"
+    "@types/inquirer": "^6.5.0",
+    "commander": "^4.1.0",
+    "inquirer": "^7.0.3",
+    "ripple-lib": "^1.6.0"
   },
   "devDependencies": {
     "@arkweid/lefthook": "^0.7.0",
