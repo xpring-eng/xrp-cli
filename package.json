@@ -10,7 +10,8 @@
   "scripts": {
     "build": "yarn clean && tsc --build",
     "clean": "rm -rf dist",
-    "lint": "eslint 'src/**/*.ts' --fix"
+    "lint": "eslint 'src/**/*.ts' --fix",
+    "start": "node dist/xrp.js"
   },
   "dependencies": {
     "@types/inquirer": "^6.5.0",
