@@ -3,21 +3,21 @@ import test from 'ava';
 import generateAddress from '../../src/api/generate-address';
 
 test('It generates a valid testnet address', async (t) => {
-  const { xAddress: x_address } = await generateAddress({});
+  const { xAddress } = await generateAddress({});
 
-  t.true(x_address[0] === 'T');
+  t.true(xAddress[0] === 'T');
 });
 
 test('It generates a valid mainnet address', async (t) => {
-  const { xAddress: x_address } = await generateAddress({ test: false });
+  const { xAddress } = await generateAddress({ test: false });
 
-  t.true(x_address[0] === 'X');
+  t.true(xAddress[0] === 'X');
 });
 
 test('It generates a valid address using ed25519', async (t) => {
-  const { xAddress: x_address } = await generateAddress({ algorithm: 'ed25519' });
+  const { xAddress } = await generateAddress({ algorithm: 'ed25519' });
 
-  t.true(x_address[0] === 'T');
+  t.true(xAddress[0] === 'T');
 });
 
 test('It can return the classic address', async (t) => {

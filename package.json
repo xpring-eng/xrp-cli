@@ -18,6 +18,7 @@
   "dependencies": {
     "@types/inquirer": "^6.5.0",
     "commander": "^4.1.0",
+    "conf": "^6.2.0",
     "inquirer": "^7.0.3",
     "ripple-lib": "^1.6.0"
   },

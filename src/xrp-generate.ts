@@ -1,4 +1,5 @@
 import * as commander from 'commander';
+import { saveAddress } from './api/configuration';
 
 import { GENERATE_HELP, getAddressSettings } from './prompts/generate-prompt';
 import generateAddress from './api/generate-address';
@@ -19,12 +20,14 @@ program
   console.log('Note that currently we only support generating TestNet/DevNet addresses.\n');
 
   const { algorithm, alias } = await getAddressSettings();
-  const { xAddress: x_address, classicAddress: classic_address, secret } = await generateAddress({ algorithm });
+  const { xAddress, classicAddress, secret } = await generateAddress({ algorithm });
+
+  saveAddress(alias, { xAddress, classicAddress, secret });
 
   console.log(`
-    Your X-Address is ${x_address}.
-    Your classic address is ${classic_address}.
-    Your secret is ${secret}.
     Your address alias is ${alias}.
+    Your X-Address is ${xAddress}.
+    Your classic address is ${classicAddress}.
+    Your secret is ${secret}.
   `);
 })();
