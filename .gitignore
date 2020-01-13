@@ -9,3 +9,7 @@ node_modules
 
 # Ignore dist folder, built from tsc
 dist/
+
+# Ignore code coverage
+.nyc_output
+coverage

@@ -11,7 +11,9 @@
     "build": "yarn clean && tsc --build",
     "clean": "rm -rf dist",
     "lint": "eslint 'src/**/*.ts' --fix",
-    "start": "node dist/xrp.js"
+    "start": "node dist/xrp.js",
+    "test": "nyc ava",
+    "watch": "ava --watch"
   },
   "dependencies": {
     "@types/inquirer": "^6.5.0",
@@ -24,12 +26,15 @@
     "@types/node": "^13.1.4",
     "@typescript-eslint/eslint-plugin": "^2.15.0",
     "@typescript-eslint/parser": "^2.15.0",
+    "ava": "^2.4.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-prettier": "^3.1.2",
+    "nyc": "^15.0.0",
     "prettier": "^1.19.1",
+    "ts-node": "^8.6.0",
     "typescript": "^3.7.4"
   },
   "engines": {
