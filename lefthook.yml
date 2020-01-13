@@ -13,6 +13,8 @@ pre-push:
   commands:
     packages-audit:
       run: yarn audit
+    test:
+      run: yarn test
 
 pre-commit:
   parallel: true
