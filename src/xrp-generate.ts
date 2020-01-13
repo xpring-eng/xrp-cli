@@ -57,16 +57,18 @@ async function getAddressSettings(): Promise<AddressSettings> {
       type: 'input',
       name: 'alias',
       message: 'What is an alias you would like to reference this address by?',
-      validate: (alias): boolean | string => {
-        // The string must be non-empty
-        if (!alias) return 'The address alias is a required field.';
-
-        // The string should have no whitespace
-        const alias_is_valid = !/\s/.test(alias);
-        return alias_is_valid || 'Your address alias cannot contain whitespace.';
-      },
+      validate: validateAddressAlias,
     },
   ]);
+}
+
+function validateAddressAlias(alias: string): boolean | string {
+  // The string must be non-empty
+  if (!alias) return 'The address alias is a required field.';
+
+  // The string should have no whitespace
+  const alias_is_valid = !/\s/.test(alias);
+  return alias_is_valid || 'Your address alias cannot contain whitespace.';
 }
 
 // Generate the actual address and secret
@@ -76,3 +78,5 @@ async function generateAddress({ algorithm, test = true }: GenerateAddressOption
   // Note that we currently don't support taking a Uint8 entropy array as an input parameter
   return api.generateXAddress({ algorithm, test });
 }
+
+export { validateAddressAlias, generateAddress };
