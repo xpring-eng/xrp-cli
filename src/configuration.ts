@@ -12,6 +12,10 @@ export function getAddress(alias: string): GeneratedAddress {
   return config.get(`address.${alias}`);
 }
 
+export function getAllAddresses(): any {
+  return config.get('address');
+}
+
 export function deleteAddress(alias: string): void {
   config.delete(`address.${alias}`);
 }

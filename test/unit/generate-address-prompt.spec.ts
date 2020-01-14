@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { validateAddressAlias } from '../../src/prompts/generate-prompt';
+import { validateAddressAlias } from '../../src/prompts/generate-address-prompt';
 
 test('It validates a valid address alias', (t) => {
   t.is(validateAddressAlias('alias'), true);
