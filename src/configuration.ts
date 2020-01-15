@@ -19,3 +19,17 @@ export function getAllAddresses(): any {
 export function deleteAddress(alias: string): void {
   config.delete(`address.${alias}`);
 }
+
+export function setCurrentAddress(alias: string): void {
+  const aliases = Object.keys(getAllAddresses());
+
+  if (!aliases.includes(alias)) {
+    console.error(
+      'That is not a valid address alias. Please try running `xrp address list` to see what addresses you have saved.',
+    );
+    return;
+  }
+
+  config.set('default', alias);
+  console.log(`Your current address is now ${alias}.`);
+}
