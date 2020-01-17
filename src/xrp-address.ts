@@ -2,9 +2,10 @@ import * as commander from 'commander';
 
 import { GENERATE_HELP, getAddressSettings } from './prompts/generate-address-prompt';
 import { ADD_ADDRESS_HELP, getAddressInputs } from './prompts/add-address-prompt';
+import updateAddress from './api/update-address';
 import generateAddress from './api/generate-address';
-import { getAllAddresses, saveAddress } from './configuration';
 import { convertAddress } from './api/convert-address';
+import { getAllAddresses, saveAddress } from './configuration';
 
 // Set up the CLI sub-command correctly, so it can process a --help flag
 const program = new commander.Command();
@@ -51,7 +52,7 @@ async function generate(): Promise<void> {
 }
 
 // List all addresses stored in local configuration
-function list(): void {
+async function list(): Promise<void> {
   const addresses = getAllAddresses();
 
   if (!addresses) {
@@ -59,12 +60,17 @@ function list(): void {
     return;
   }
 
+  for (const alias of Object.keys(addresses)) {
+    await updateAddress(alias);
+  }
+
   Object.keys(addresses).forEach((alias) => {
     console.log(`
 ${alias}:
   X-Address:         ${addresses[alias].xAddress}
   Classic Address:   ${addresses[alias]?.classicAddress}
-  Secret:            ${addresses[alias].secret}`);
+  Secret:            ${addresses[alias].secret}
+  XRP Balance:       ${addresses[alias]?.xrpBalance || 'Account is not funded on the XRP Ledger'}`);
   });
 
   console.log('\n');
