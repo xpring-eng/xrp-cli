@@ -15,6 +15,9 @@ module.exports = {
     'no-console': 'off', // It's a CLI, we need to log to the console
     '@typescript-eslint/no-use-before-define': 'off', // It's nice to define helpers at the bottom of a file.
     'import/extensions': 'off', //ESlint does not like importing Typescript files without an extension
+    'no-restricted-syntax': 'off',
+    'no-await-in-loop': 'off',
+    'no-plusplus': 'off',
   },
   overrides: [
     {

@@ -2,25 +2,21 @@ import live_api from './live-connection';
 import { getAddress, saveAddress } from '../configuration';
 
 export default async function updateAddress(alias: string): Promise<void> {
-  await live_api.connect();
-
-  const address = getAddress(alias);
+  const account = getAddress(alias);
 
   try {
-    const accountInfo = await live_api.getAccountInfo(address);
+    await live_api.connect();
+    const accountInfo = await live_api.getAccountInfo(account.classicAddress);
 
     for (const [key, value] of Object.entries(accountInfo)) {
-      address[key] = value;
+      account[key] = value;
     }
 
-    saveAddress(alias, address);
+    saveAddress(alias, account);
   } catch (e) {
     // Swallow "Account not found." errors
     if (e?.data?.error_message !== 'Account not found.') {
-      console.error(`${address}: ${e?.data?.error_message}`);
+      console.error(`${account.classicAddress}: ${e?.data?.error_message}`);
     }
-  } finally {
-    // Clean up and close the connection
-    live_api.disconnect();
   }
 }

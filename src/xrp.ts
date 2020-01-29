@@ -12,6 +12,9 @@ xrp_cli.command(
   'Interact with addresses. Generate or add new addresses or list existing ones.',
 );
 
+// Subcommand for sending XRP
+xrp_cli.command('send <direct>', 'Send value to another account.');
+
 // Command for setting a saved address as your current address
 xrp_cli
   .command('use <address_alias>')

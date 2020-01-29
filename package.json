@@ -20,8 +20,9 @@
     "commander": "^4.1.0",
     "conf": "^6.2.0",
     "inquirer": "^7.0.3",
-    "ripple-address-codec": "^4.0.0",
-    "ripple-lib": "^1.6.0"
+    "ora": "^4.0.3",
+    "ripple-address-codec": "^4.1.0",
+    "ripple-lib": "^1.6.2"
   },
   "devDependencies": {
     "@arkweid/lefthook": "^0.7.0",

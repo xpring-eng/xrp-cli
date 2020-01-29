@@ -6,6 +6,7 @@ import updateAddress from './api/update-address';
 import generateAddress from './api/generate-address';
 import { convertAddress } from './api/convert-address';
 import { getAllAddresses, saveAddress } from './configuration';
+import live_api from './api/live-connection';
 
 // Set up the CLI sub-command correctly, so it can process a --help flag
 const program = new commander.Command();
@@ -74,6 +75,7 @@ ${alias}:
   });
 
   console.log('\n');
+  live_api.disconnect();
 }
 
 // Add a new address

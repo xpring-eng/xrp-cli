@@ -1,4 +1,5 @@
 import Conf from 'conf';
+import updateAddress from './api/update-address';
 
 const config = new Conf();
 
@@ -30,4 +31,16 @@ export function setCurrentAddress(alias: string): void {
 
   config.set('default', alias);
   console.log(`Your current address is now ${alias}.`);
+}
+
+export function getCurrentAddress(): any {
+  const alias = config.get('default');
+  return getAddress(alias);
+}
+
+export async function updateCurrentAddress(): Promise<any> {
+  const alias = config.get('default');
+
+  await updateAddress(alias);
+  return getAddress(alias);
 }
