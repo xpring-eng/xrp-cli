@@ -1,6 +1,6 @@
 {
   "name": "xrp-cli",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "ISC",
   "description": "A Node-based CLI for the XRP Ledger",
   "main": "./dist/xrp.js",
