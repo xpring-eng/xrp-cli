@@ -11,6 +11,10 @@ export function saveAddress(alias: string, address_parts: any): void {
   config.set(`address.${alias}`, address_parts);
 }
 
+export function removeAddress(alias: string): void {
+  config.delete(`address.${alias}`);
+}
+
 export function getAddress(alias: string): any {
   return config.get(`address.${alias}`);
 }

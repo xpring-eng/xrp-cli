@@ -5,7 +5,7 @@ import { ADD_ADDRESS_HELP, getAddressInputs } from './prompts/add-address-prompt
 import updateAddress from './api/update-address';
 import generateAddress from './api/generate-address';
 import { convertAddress } from './api/convert-address';
-import { getAllAddresses, saveAddress } from './configuration';
+import { getAllAddresses, saveAddress, removeAddress } from './configuration';
 import live_api from './api/live-connection';
 
 // Set up the CLI sub-command correctly, so it can process a --help flag
@@ -30,6 +30,11 @@ program
   .description('Add your own address/secret combination')
   .action(add)
   .on('--help', () => console.log(ADD_ADDRESS_HELP));
+
+program
+  .command('remove <alias>')
+  .description('Remove an address by alias')
+  .action(remove);
 
 program.parse(process.argv);
 
@@ -87,4 +92,11 @@ async function add(): Promise<void> {
   saveAddress(alias, { xAddress, classicAddress, secret });
 
   console.log(`Your address has been saved as ${alias}.`);
+}
+
+// Remove an existing address
+function remove(alias: string): void {
+  removeAddress(alias);
+
+  console.log(`Your address '${alias}' has been removed.`);
 }
