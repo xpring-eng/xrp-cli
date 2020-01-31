@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"@arkweid/lefthook@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@arkweid/lefthook/-/lefthook-0.7.0.tgz#521c0d2359180e7ae5b05c57dd9dab7b45e98b5e"
-  integrity sha512-afoWflzWtIQqFiEjR5oNuWzYtkel2g7LySpNL7atTlkYCfzP3VyavgtlGs8FTOFCRMHV+2m1ID2urOX6eUEhgw==
-
 "@ava/babel-plugin-throws-helper@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@ava/babel-plugin-throws-helper/-/babel-plugin-throws-helper-4.0.0.tgz#8f5b45b7a0a79c6f4032de2101e0c221847efb62"
