@@ -4,7 +4,7 @@ import * as commander from 'commander';
 import { setCurrentAddress } from './configuration';
 
 const xrp_cli = new commander.Command();
-xrp_cli.version('0.1.0');
+xrp_cli.version('0.1.2');
 
 // Subcommand for interacting with addresses
 xrp_cli.command('address <cmd>', 'Interact with addresses. Generate or add new addresses or list existing ones.');

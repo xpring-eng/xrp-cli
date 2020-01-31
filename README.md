@@ -8,7 +8,7 @@ Note: At the moment the CLI only supports Testnet accounts.
 
 ## Installation
 
-To install the XRP CLI, just run `npm install -g xrp-cli`. This will put the `xrp` command on your PATH.
+To install the XRP CLI, just run `yarn global add @xpring-eng/xrp-cli` or `npm install -g @xpring-eng/xrp-cli`. This will put the `xrp` command on your PATH.
 
 Alternatively, you can clone this repo, and run `npm install -g` from inside this repository.
 

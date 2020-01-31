@@ -4,7 +4,7 @@ import updateAddress from './api/update-address';
 const config = new Conf({
   configName: 'xrp_cli',
   projectName: 'xrp_cli',
-  projectVersion: '0.1.0',
+  projectVersion: '0.1.2',
 });
 
 export function saveAddress(alias: string, address_parts: any): void {
