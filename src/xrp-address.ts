@@ -32,7 +32,7 @@ program
   .on('--help', () => console.log(ADD_ADDRESS_HELP));
 
 program
-  .command('remove <alias>')
+  .command('remove [alias]')
   .description('Remove an address by alias')
   .action(remove);
 
