@@ -51,8 +51,7 @@ export async function getDirectPaymentTransactionSettings() {
       address: destination_address,
       minAmount: {
         currency: 'drops',
-        // Only pay up to 100 drops in fees
-        value: `${+xrpToDrops(amount) - 100}`,
+        value: `${xrpToDrops(amount)}`,
       },
     },
   };
