@@ -1,11 +1,11 @@
 {
-  "name": "xrp-cli",
+  "name": "@xpring-eng/xrp-cli",
   "version": "0.1.0",
   "license": "ISC",
   "description": "A Node-based CLI for the XRP Ledger",
   "main": "./dist/xrp.js",
   "bin": {
-    "xrp": "./dist/xrp.js"
+    "xrp": "dist/xrp.js"
   },
   "scripts": {
     "build": "yarn clean && tsc --build",
@@ -41,5 +41,20 @@
   },
   "engines": {
     "node": ">=10"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xpring-eng/xrp-cli.git"
+  },
+  "keywords": [
+    "cli",
+    "xrp"
+  ],
+  "bugs": {
+    "url": "https://github.com/xpring-eng/xrp-cli/issues"
+  },
+  "homepage": "https://github.com/xpring-eng/xrp-cli#readme"
 }
