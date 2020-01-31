@@ -25,7 +25,6 @@
     "ripple-lib": "^1.6.2"
   },
   "devDependencies": {
-    "@arkweid/lefthook": "^0.7.0",
     "@types/node": "^13.1.4",
     "@typescript-eslint/eslint-plugin": "^2.15.0",
     "@typescript-eslint/parser": "^2.15.0",
